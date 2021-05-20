@@ -58,5 +58,11 @@ namespace Librurari.Pages
         {
             Filter();
         }
+
+        private void BtnResetFilters_Click(object sender, RoutedEventArgs e)
+        {
+            TxtSearch.Clear();
+            Cmbfilter.SelectedIndex = 0;
+        }
     }
 }

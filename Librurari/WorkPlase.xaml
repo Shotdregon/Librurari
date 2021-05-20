@@ -43,9 +43,9 @@
                 <Button x:Name="btnlistRider" Content="Топ читателей"  BorderThickness="0"
                     Foreground="Black" Background="Transparent" FontSize="20" FontWeight="ExtraBold" Margin="5" Height="43" Click="btnlistRider_Click" 
                 />
-            <Button x:Name="btnToprider" Content="список читателей"  BorderThickness="0"
+            <Button x:Name="btnToprider" Content="Cписок читателей"  BorderThickness="0"
                     Foreground="Black" Background="Transparent" FontSize="20" FontWeight="ExtraBold" 
-                    Margin="5" Height="43" Click="btnlistRider_Click" 
+                    Margin="5" Height="43" Click="btnToprider_Click" 
                 />
 
         </StackPanel>

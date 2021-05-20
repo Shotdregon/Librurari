@@ -28,7 +28,12 @@ namespace Librurari
 
         private void btnlistRider_Click(object sender, RoutedEventArgs e)
         {
+            MainFrame.Content = new ReaderPage();
+        }
 
+        private void btnToprider_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new ListReaderPage();
         }
     }
 }
