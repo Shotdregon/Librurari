@@ -40,9 +40,14 @@
 
             <StackPanel Grid.Row="0"  Grid.RowSpan="2">
                 
-                <Button x:Name="btnlistRider" Content="список читателей"  BorderThickness="0"
-                    Foreground="Black" Background="Transparent" FontSize="20" FontWeight="ExtraBold" Margin="5" Height="43" 
+                <Button x:Name="btnlistRider" Content="Топ читателей"  BorderThickness="0"
+                    Foreground="Black" Background="Transparent" FontSize="20" FontWeight="ExtraBold" Margin="5" Height="43" Click="btnlistRider_Click" 
                 />
-            </StackPanel>
+            <Button x:Name="btnToprider" Content="список читателей"  BorderThickness="0"
+                    Foreground="Black" Background="Transparent" FontSize="20" FontWeight="ExtraBold" 
+                    Margin="5" Height="43" Click="btnlistRider_Click" 
+                />
+
+        </StackPanel>
     </Grid>
 </Window>

@@ -46,8 +46,9 @@ namespace Librurari.AppData
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Teg> Teg { get; set; }
         public virtual DbSet<Histori> Histori { get; set; }
-        public virtual DbSet<BookList> BookList { get; set; }
+        public virtual DbSet<infbook> infbook { get; set; }
         public virtual DbSet<NoReturnbook> NoReturnbook { get; set; }
+        public virtual DbSet<ReaderList> ReaderList { get; set; }
         public virtual DbSet<vivReader> vivReader { get; set; }
     
         public virtual ObjectResult<bookreateng_Result> bookreateng(string retinbord)

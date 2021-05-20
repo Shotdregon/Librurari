@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Librurari.Page
+namespace Librurari.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Page1.xaml
+    /// Логика взаимодействия для ListReaderPage.xaml
     /// </summary>
-    public partial class PageReader : PageReader
+    public partial class ListReaderPage : Page
     {
-        public PageReader()
+        public ListReaderPage()
         {
             InitializeComponent();
         }

@@ -1,0 +1,51 @@
+﻿<Page x:Class="Librurari.Pages.ReaderPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Librurari.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1250"
+      Title="ReaderPage">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <TextBlock Text="Поиск" Margin="10,8,0,8" Width="105" VerticalAlignment="Center"
+                       FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" Foreground="Black"/>
+            <TextBox x:Name="TxtSearch" Margin="0 10 20 10" Width="185"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" TextChanged="TxtSearch_TextChanged" />
+            <TextBlock Text="Сортировка ПО:" Margin="10,8,0,8" Width="200" VerticalAlignment="Center"
+                       FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" Foreground="Black"/>
+            <ComboBox x:Name="Cmbfilter" Margin="0 10 20 10" Width="185"
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" />
+
+            <Button x:Name="BtnResetFilters" Content="Сброс фильтра" VerticalAlignment="Bottom"
+             Background="GreenYellow"    FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
+                     Margin="50,0,5,10" Width="239" Height="40" />
+
+        </StackPanel>
+
+        <ListView Name="ListViewFW"  Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Фамилия" Width="100" DisplayMemberBinding="{Binding LastName}"/>
+                    <GridViewColumn Header="Имя" Width="100" DisplayMemberBinding="{Binding FirstName}"/>
+                    <GridViewColumn Header="Отчество" Width="100" DisplayMemberBinding="{Binding Patronumic}"/>
+                    <GridViewColumn Header="Телефон" Width="100" DisplayMemberBinding="{Binding Phone}"/>
+                    <GridViewColumn Header="Адрес" Width="100" DisplayMemberBinding="{Binding Addres}"/>
+                    <GridViewColumn Header="Пол" Width="100" DisplayMemberBinding="{Binding NameGender}"/>
+                    <GridViewColumn Header="Паспорт" Width="100" DisplayMemberBinding="{Binding pasport}"/>
+                    <GridViewColumn Header="Дата рождения" Width="100" DisplayMemberBinding="{Binding BirthDate }"/>
+                    <GridViewColumn Header="Тег" Width="100" DisplayMemberBinding="{Binding NameTeg}"/>
+                    <GridViewColumn Header="Количество оренд" Width="100" DisplayMemberBinding="{Binding QuantityBp}"/>
+                    <GridViewColumn Header="возраст" Width="100" DisplayMemberBinding="{Binding Age}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</Page>

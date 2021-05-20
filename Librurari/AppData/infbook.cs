@@ -12,12 +12,11 @@ namespace Librurari.AppData
     using System;
     using System.Collections.Generic;
     
-    public partial class BookList
+    public partial class infbook
     {
         public int IdBook { get; set; }
         public string NameBook { get; set; }
         public System.DateTime DateCreate { get; set; }
-        public string Autor { get; set; }
         public string NamePublishing { get; set; }
         public string NameReiting { get; set; }
         public int Quantity { get; set; }
@@ -25,5 +24,6 @@ namespace Librurari.AppData
         public string Description { get; set; }
         public string NameGanre { get; set; }
         public decimal Prise { get; set; }
+        public string autor { get; set; }
     }
 }

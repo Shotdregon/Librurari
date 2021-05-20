@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Librurari.Pages;
 
 namespace Librurari
 {
@@ -22,6 +23,12 @@ namespace Librurari
         public WorkpPlase()
         {
             InitializeComponent();
+            MainFrame.Content = new ReaderPage();
+        }
+
+        private void btnlistRider_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
