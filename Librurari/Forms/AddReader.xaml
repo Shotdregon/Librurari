@@ -1,0 +1,146 @@
+﻿<Window x:Class="Librurari.Forms.AddReader"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Librurari.Forms"
+        mc:Ignorable="d"
+        Title="AddReader" Height="700" Width="500"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal"
+                    VerticalAlignment="Center">
+            <Image Source="/Image/logo.png"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
+            <Button x:Name="save"
+                    
+                    Width="220  " 
+                    Height="40"
+                    FontFamily="Tw Cen MT"
+                    Background="GreenYellow"
+                    Margin="5 0"
+                    Content="Сохранить" 
+                    VerticalContentAlignment="Center" 
+                    FontSize="30" Click="save_Click" 
+            />
+            <Button x:Name="bec"
+                    
+                    Width="220" 
+                    Height="40"
+                    FontFamily="Tw Cen MT"
+                    Background="GreenYellow"
+                    Margin="5 0"
+                    Content="Отмена" 
+                    VerticalContentAlignment="Center" 
+                    FontSize="30" 
+            />
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="фамилия"
+                       VerticalAlignment="Center" 
+                       FontFamily="Tw Cen MT"
+                       FontSize="30"
+                       Margin="20 0"
+                       TextWrapping="Wrap"
+                       Grid.Row="0" 
+                       Grid.Column="0"/>
+            <TextBox x:Name="tblastname" 
+                     Grid.Row="0" 
+                     Grid.Column="1"
+                     FontSize="30"/>
+            <TextBlock Text="Имя"
+                       VerticalAlignment="Center" 
+                       FontFamily="Tw Cen MT"
+                       FontSize="30"
+                       Margin="20 0"
+                       TextWrapping="Wrap"
+                       Grid.Row="1" 
+                       Grid.Column="0"/>
+            <TextBox x:Name="tbname" 
+                     Grid.Row="1" 
+                     Grid.Column="1" 
+                     FontSize="30"/>
+            <TextBlock Text="Отчество"
+                       VerticalAlignment="Center" 
+                       FontFamily="Tw Cen MT"
+                       FontSize="30"
+                       Margin="20 0"
+                       TextWrapping="Wrap"
+                       Grid.Row="2" 
+                       Grid.Column="0"/>
+            <TextBox x:Name="tbpatronumic" 
+                     Grid.Row="2" 
+                     Grid.Column="1"
+                     FontSize="30"/>
+            <TextBlock Text="Телефон"
+                       VerticalAlignment="Center" 
+                       FontFamily="Tw Cen MT"
+                       FontSize="30"
+                       Margin="20 0"
+                       TextWrapping="Wrap"
+                       Grid.Row="3" 
+                       Grid.Column="0"/>
+            <TextBox x:Name="tbphone" 
+                     Grid.Row="3" 
+                     Grid.Column="1"
+                     FontSize="30"/>
+            <TextBlock Text="Адрес"
+                       VerticalAlignment="Center" 
+                       FontFamily="Tw Cen MT"
+                       FontSize="30"
+                       Margin="20 0"
+                       TextWrapping="Wrap"
+                       Grid.Row="4" 
+                       Grid.Column="0"/>
+            <TextBox x:Name="Tbaddres" 
+                     Grid.Row="4" 
+                     Grid.Column="1" 
+                     FontSize="30"/>
+            <TextBlock Text="дата родждения"
+                       VerticalAlignment="Center" 
+                       FontFamily="Tw Cen MT"
+                       FontSize="30"
+                       Margin="20 0"
+                       TextWrapping="Wrap"
+                       Grid.Row="6" 
+                       Grid.Column="0"/>
+            <DatePicker x:Name="dpbirthdate" 
+                     Grid.Row="6" 
+                     Grid.Column="1" 
+                        FontSize="30"/>
+            <TextBlock Text="пол"
+                       VerticalAlignment="Center" 
+                       FontFamily="Tw Cen MT"
+                       FontSize="30"
+                       Margin="20 0"
+                       TextWrapping="Wrap"
+                       Grid.Row="5" 
+                       Grid.Column="0"/>
+            <ComboBox x:Name="cbgender" 
+                     Grid.Row="5" 
+                     Grid.Column="1" 
+                      FontSize="30"
+            />
+        </Grid>
+    </Grid>
+</Window>

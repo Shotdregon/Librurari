@@ -1,0 +1,14 @@
+﻿<Page x:Class="Librurari.Pages.ArendList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Librurari.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1250"
+      Title="ArendList">
+
+    <Grid Background="White">
+        
+    </Grid>
+</Page>

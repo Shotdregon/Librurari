@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Librurari.Forms;
 using Librurari.Pages;
 
 namespace Librurari
@@ -34,6 +35,20 @@ namespace Librurari
         private void btnToprider_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Content = new ListReaderPage();
+        }
+
+
+
+        private void BtnExit_Click(object sender, RoutedEventArgs e)
+        {
+            FormAuthorization formav = new FormAuthorization();
+            formav.Show();
+            this.Close();
+        }
+
+        private void btnlistbook_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new PageBook();
         }
     }
 }

@@ -34,7 +34,8 @@ namespace Librurari.Pages
         }
         public void Filter() 
         {
-            var list = context.vivReader.Where(i => i.FirstName.Contains(TxtSearch.Text) 
+            var list = context.vivReader.AsNoTracking()
+                .Where(i => i.FirstName.Contains(TxtSearch.Text) 
             || i.LastName.Contains(TxtSearch.Text) 
             || i.Patronumic.Contains(TxtSearch.Text))
                 .ToList();
@@ -50,6 +51,7 @@ namespace Librurari.Pages
                     list = list.OrderByDescending(i => i.NameGender).ToList();
                     break;
             }
+            ListViewFW.ItemsSource = list;
         }
             
         
@@ -63,6 +65,11 @@ namespace Librurari.Pages
         {
             TxtSearch.Clear();
             Cmbfilter.SelectedIndex = 0;
+        }
+
+        private void Cmbfilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Filter();
         }
     }
 }

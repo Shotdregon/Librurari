@@ -14,6 +14,7 @@
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Image Source="/Image/logo.png"/>
             <TextBlock Text="Поиск" Margin="10,8,0,8" Width="105" VerticalAlignment="Center"
                        FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" Foreground="Black"/>
             <TextBox x:Name="TxtSearch" Margin="0 10 20 10" Width="185"
@@ -21,7 +22,7 @@
             <TextBlock Text="Сортировка ПО:" Margin="10,8,0,8" Width="200" VerticalAlignment="Center"
                        FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" Foreground="Black"/>
             <ComboBox x:Name="Cmbfilter" Margin="0 10 20 10" Width="185"
-                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" />
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" SelectionChanged="Cmbfilter_SelectionChanged" />
 
             <Button x:Name="BtnResetFilters" Content="Сброс фильтра" VerticalAlignment="Bottom"
              Background="GreenYellow"    FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"

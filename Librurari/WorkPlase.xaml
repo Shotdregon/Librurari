@@ -34,7 +34,7 @@
                         Margin="235,0,900,0" Width="370"
             />
                 <Button x:Name="BtnExit" Foreground="White" Background="Black" BorderThickness="2"
-                     FontSize="30" FontWeight="ExtraBold"   Content="EXIT" Margin="1298,2,-22,4"
+                     FontSize="30" FontWeight="ExtraBold"   Content="EXIT" Margin="1298,2,-22,4" Click="BtnExit_Click"
                 />
         </Grid>
 
@@ -47,7 +47,19 @@
                     Foreground="Black" Background="Transparent" FontSize="20" FontWeight="ExtraBold" 
                     Margin="5" Height="43" Click="btnToprider_Click" 
                 />
+            <Button x:Name="btnlistbook" Content="Cписок книг"  BorderThickness="0"
+                    Foreground="Black" Background="Transparent" FontSize="20" FontWeight="ExtraBold" 
+                    Margin="5" Height="43" Click="btnlistbook_Click"
+                />
 
+            <Button x:Name="btnArendbook" Content="Арендованные&#10;      книги"  BorderThickness="0"
+                    Foreground="Black" Background="Transparent" FontSize="20" FontWeight="ExtraBold" 
+                    Margin="5" Height="70" 
+                />
+            <Button x:Name="btnbpb" Content="Выдать книгу"  BorderThickness="0"
+                    Foreground="Black" Background="Transparent" FontSize="20" FontWeight="ExtraBold" 
+                    Margin="5" Height="50" 
+                />
         </StackPanel>
     </Grid>
 </Window>

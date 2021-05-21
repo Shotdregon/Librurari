@@ -48,8 +48,8 @@ namespace Librurari.AppData
         public virtual DbSet<Histori> Histori { get; set; }
         public virtual DbSet<infbook> infbook { get; set; }
         public virtual DbSet<NoReturnbook> NoReturnbook { get; set; }
-        public virtual DbSet<ReaderList> ReaderList { get; set; }
         public virtual DbSet<vivReader> vivReader { get; set; }
+        public virtual DbSet<ReaderList> ReaderList { get; set; }
     
         public virtual ObjectResult<bookreateng_Result> bookreateng(string retinbord)
         {

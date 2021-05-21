@@ -235,7 +235,10 @@
             <PropertyRef Name="Phone" />
             <PropertyRef Name="NameGender" />
             <PropertyRef Name="BirthDate" />
+            <PropertyRef Name="Series" />
+            <PropertyRef Name="Number" />
             <PropertyRef Name="ReleaseDate" />
+            <PropertyRef Name="IdReader" />
           </Key>
           <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -244,8 +247,10 @@
           <Property Name="Addres" Type="nvarchar" MaxLength="150" />
           <Property Name="NameGender" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="BirthDate" Type="date" Nullable="false" />
-          <Property Name="number" Type="varchar" MaxLength="8000" />
+          <Property Name="Series" Type="int" Nullable="false" />
+          <Property Name="Number" Type="int" Nullable="false" />
           <Property Name="ReleaseDate" Type="date" Nullable="false" />
+          <Property Name="IdReader" Type="int" Nullable="false" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "libruari.dbo.vivReader" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
@@ -573,8 +578,10 @@
     [ReaderList].[Addres] AS [Addres], 
     [ReaderList].[NameGender] AS [NameGender], 
     [ReaderList].[BirthDate] AS [BirthDate], 
-    [ReaderList].[number] AS [number], 
-    [ReaderList].[ReleaseDate] AS [ReleaseDate]
+    [ReaderList].[Series] AS [Series], 
+    [ReaderList].[Number] AS [Number], 
+    [ReaderList].[ReleaseDate] AS [ReleaseDate], 
+    [ReaderList].[IdReader] AS [IdReader]
     FROM [dbo].[ReaderList] AS [ReaderList]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="vivReader" EntityType="Self.vivReader" store:Type="Views" store:Schema="dbo">
@@ -721,7 +728,6 @@
           <EntitySet Name="Histori" EntityType="libruariModel.Histori" />
           <EntitySet Name="infbook" EntityType="libruariModel.infbook" />
           <EntitySet Name="NoReturnbook" EntityType="libruariModel.NoReturnbook" />
-          <EntitySet Name="ReaderList" EntityType="libruariModel.ReaderList" />
           <EntitySet Name="vivReader" EntityType="libruariModel.vivReader" />
           <AssociationSet Name="FK_Autor_Countru" Association="libruariModel.FK_Autor_Countru">
             <End Role="Countru" EntitySet="Countru" />
@@ -791,7 +797,8 @@
             <End Role="StatatusReturn" EntitySet="StatatusReturn" />
             <End Role="ReturnBook" EntitySet="ReturnBook" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="ReaderList" EntityType="libruariModel.ReaderList" />
+          </EntityContainer>
         <ComplexType Name="bookreateng_Result">
           <Property Type="String" Name="NameBook" Nullable="false" MaxLength="150" />
           <Property Type="String" Name="возрастное_ограничене" Nullable="false" MaxLength="50" />
@@ -1056,25 +1063,6 @@
           <Property Name="DateReturn" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="FIO" Type="String" MaxLength="152" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="ReaderList">
-          <Key>
-            <PropertyRef Name="LastName" />
-            <PropertyRef Name="FirstName" />
-            <PropertyRef Name="Phone" />
-            <PropertyRef Name="NameGender" />
-            <PropertyRef Name="BirthDate" />
-            <PropertyRef Name="ReleaseDate" />
-          </Key>
-          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Patronumic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Addres" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="NameGender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="number" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
-          <Property Name="ReleaseDate" Type="DateTime" Nullable="false" Precision="0" />
-        </EntityType>
         <EntityType Name="vivReader">
           <Key>
             <PropertyRef Name="IdReader" />
@@ -1302,7 +1290,31 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <EntityType Name="ReaderList">
+          <Key>
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="NameGender" />
+            <PropertyRef Name="BirthDate" />
+            <PropertyRef Name="Series" />
+            <PropertyRef Name="Number" />
+            <PropertyRef Name="ReleaseDate" />
+            <PropertyRef Name="IdReader" />
+          </Key>
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Patronumic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Addres" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="NameGender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Series" Type="Int32" Nullable="false" />
+          <Property Name="Number" Type="Int32" Nullable="false" />
+          <Property Name="ReleaseDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdReader" Type="Int32" Nullable="false" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -1565,21 +1577,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ReaderList">
-            <EntityTypeMapping TypeName="libruariModel.ReaderList">
-              <MappingFragment StoreEntitySet="ReaderList">
-                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
-                <ScalarProperty Name="number" ColumnName="number" />
-                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
-                <ScalarProperty Name="NameGender" ColumnName="NameGender" />
-                <ScalarProperty Name="Addres" ColumnName="Addres" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Patronumic" ColumnName="Patronumic" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="vivReader">
             <EntityTypeMapping TypeName="libruariModel.vivReader">
               <MappingFragment StoreEntitySet="vivReader">
@@ -1598,7 +1595,24 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="ReaderList">
+            <EntityTypeMapping TypeName="libruariModel.ReaderList">
+              <MappingFragment StoreEntitySet="ReaderList">
+                <ScalarProperty Name="IdReader" ColumnName="IdReader" />
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Series" ColumnName="Series" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="NameGender" ColumnName="NameGender" />
+                <ScalarProperty Name="Addres" ColumnName="Addres" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Patronumic" ColumnName="Patronumic" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

@@ -1,4 +1,4 @@
-﻿<Page x:Class="Librurari.Pages.ListReaderPage"
+﻿<Page x:Class="Librurari.Pages.PageBook"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Librurari.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1250"
-      Title="ListReaderPage">
+      Title="PageBook">
 
     <Grid Background="White">
         <Grid.RowDefinitions>
@@ -19,13 +19,13 @@
             <TextBlock Text="Поиск" Margin="10,8,0,8" Width="105" VerticalAlignment="Center"
                        FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" Foreground="Black"/>
             <TextBox x:Name="TxtSearch" Margin="0 10 20 10" Width="185"
-                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" TextChanged="TxtSearch_TextChanged"  />
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black"   />
             <TextBlock Text="Сортировка ПО:" Margin="10,8,0,8" Width="200" VerticalAlignment="Center"
                        FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS" Foreground="Black"/>
             <ComboBox x:Name="Cmbfilter" Margin="0 10 20 10" Width="175"
-                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" SelectionChanged="Cmbfilter_SelectionChanged" />
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black"  />
             <ComboBox x:Name="CmbGender" Margin="0 10 10 10" Width="175"
-                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black" SelectionChanged="CmbGender_SelectionChanged" />
+                      FontWeight="Bold" FontSize="20" FontFamily="Comic Sans MS" Foreground="Black"  />
 
             <Button x:Name="BtnResetFilters" Content="Сброс фильтра" VerticalAlignment="Bottom"
              Background="GreenYellow"    FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
@@ -33,26 +33,30 @@
 
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" >
-            <Button x:Name="BtnAddReader" Content="Добавить читаеля" VerticalAlignment="Center"
+            <Button x:Name="BtnAddReader" Content="Добавить книгу" VerticalAlignment="Center"
              Background="GreenYellow" FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
-                     Margin="0,10,150,10" Width="299" Height="40" Click="BtnAddReader_Click" />
-            <Button x:Name="BtnEditReader" Content="Изменить читателя" VerticalAlignment="Center"
+                     Margin="0,10,150,10" Width="299" Height="40" />
+            <Button x:Name="BtnEditReader" Content="Изменит книгу" VerticalAlignment="Center"
              Background="GreenYellow"    FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
                      Margin="40,10,150,10" Width="270" Height="40"/>
-            <Button x:Name="BtnDeleteCharacteristics" Content="Удалить читателя" VerticalAlignment="Top"
+            <Button x:Name="BtnDeleteCharacteristics" Content="Удалить книгу" VerticalAlignment="Top"
              Background="Red" FontWeight="Bold" FontSize="25" FontFamily="Comic Sans MS"
-                    RenderTransformOrigin="0.751,0.687" Margin="40,10,5,0" Width="299" Height="40" Click="BtnDeleteCharacteristics_Click"/>
+                    RenderTransformOrigin="0.751,0.687" Margin="40,10,5,0" Width="299" Height="40"/>
         </StackPanel>
-        <ListView Name="ListViewFW"  Grid.Row="1">
+        <ListView Name="ListViewBook"  Grid.Row="1">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Фамилия" Width="150" DisplayMemberBinding="{Binding LastName}"/>
-                    <GridViewColumn Header="Имя" Width="150" DisplayMemberBinding="{Binding FirstName}"/>
-                    <GridViewColumn Header="Отчество" Width="150" DisplayMemberBinding="{Binding Patronumic}"/>
-                    <GridViewColumn Header="Телефон" Width="150" DisplayMemberBinding="{Binding Phone}"/>
-                    <GridViewColumn Header="Адрес" Width="150" DisplayMemberBinding="{Binding Addres}"/>
-                    <GridViewColumn Header="Пол" Width="150" DisplayMemberBinding="{Binding NameGender}"/>
-                    <GridViewColumn Header="Дата рождения" Width="150" DisplayMemberBinding="{Binding BirthDate }"/>
+                    <GridViewColumn Header="Название" Width="130" DisplayMemberBinding="{Binding NameBook}"/>
+                    <GridViewColumn Header="Дата создания" Width="130" DisplayMemberBinding="{Binding DateCreate}"/>
+                    <GridViewColumn Header="Издатель" Width="150" DisplayMemberBinding="{Binding NamePublishing}"/>
+                    <GridViewColumn Header="Рейтинг" Width="100" DisplayMemberBinding="{Binding NameReiting}"/>
+                    <GridViewColumn Header="Колличество" Width="100" DisplayMemberBinding="{Binding Quantity}"/>
+                    <GridViewColumn Header="Кол-во страниц" Width="150" DisplayMemberBinding="{Binding SizeBook}"/>
+                    <GridViewColumn Header="Описание" Width="150" DisplayMemberBinding="{Binding Description }"/>
+                    <GridViewColumn Header="Жанр" Width="50" DisplayMemberBinding="{Binding NameGanre }"/>
+                    <GridViewColumn Header="цена" Width="50" DisplayMemberBinding="{Binding Prise }"/>
+                    <GridViewColumn Header="автор" Width="150" DisplayMemberBinding="{Binding autor }"/>
+                    
                 </GridView>
             </ListView.View>
         </ListView>

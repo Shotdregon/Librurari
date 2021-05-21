@@ -21,7 +21,9 @@ namespace Librurari.AppData
         public string Addres { get; set; }
         public string NameGender { get; set; }
         public System.DateTime BirthDate { get; set; }
-        public string number { get; set; }
+        public int Series { get; set; }
+        public int Number { get; set; }
         public System.DateTime ReleaseDate { get; set; }
+        public int IdReader { get; set; }
     }
 }

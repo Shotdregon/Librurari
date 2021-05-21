@@ -10,6 +10,8 @@
         WindowStartupLocation="CenterScreen"
         Topmost="True">
     
+
+
     <Grid Background="SandyBrown">
         <Grid.RowDefinitions>
             <RowDefinition Height="80*"/>
@@ -35,11 +37,13 @@
             BorderBrush="Black"
             Grid.Row="2" 
             Height="50"
-            Width="390"
-            Style="{StaticResource TxSearchStyle }"
+            Width="350"
+            FontSize="20"
+            BorderThickness="2"
             HorizontalAlignment="Center"
             Name="txtlogin"
-            ToolTip="EnterLogin"
+            ToolTip="EnterLogin" 
+            Style="{StaticResource TxSearchStyle }"
         />
         <TextBlock 
             Text="Пароль" 
@@ -50,7 +54,7 @@
         <TextBox Background="SandyBrown"            
             Grid.Row="4" 
             Height="50"
-            Width="390"
+            Width="350"
             Style="{StaticResource TxSearchStyle }"
             HorizontalAlignment="Center"
             x:Name="txtpasword"
